@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entity/inventory/weapon_mod/WeaponMod.gd" type="Script" id=1]
+
+
+[node name="standar_ext_mag" type="Spatial"]
+script = ExtResource( 1 )
+type_mod = 2
+inc_ammo_bonus = 0.3
+dec_reload_bonus = 0.1

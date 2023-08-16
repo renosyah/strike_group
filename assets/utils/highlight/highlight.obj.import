@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/highlight.obj-9fec444ffb7e07713d2a1b338c9ea0cb.mesh"
+
+[deps]
+
+files=[ "res://.import/highlight.obj-9fec444ffb7e07713d2a1b338c9ea0cb.mesh" ]
+
+source_file="res://assets/utils/highlight/highlight.obj"
+dest_files=[ "res://.import/highlight.obj-9fec444ffb7e07713d2a1b338c9ea0cb.mesh", "res://.import/highlight.obj-9fec444ffb7e07713d2a1b338c9ea0cb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

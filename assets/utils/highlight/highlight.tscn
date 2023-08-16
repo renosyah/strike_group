@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/utils/highlight/highlight.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/utils/highlight/highlight.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+albedo_color = Color( 1, 1, 1, 0.619608 )
+
+[node name="highlight" type="MeshInstance"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 1 )
+script = ExtResource( 2 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entity/inventory/weapon_mod/WeaponMod.gd" type="Script" id=1]
+
+
+[node name="standar_scope" type="Spatial"]
+script = ExtResource( 1 )
+type_mod = 3
+inc_attack_bonus = 0.12
+dec_attack_delay_bonus = 0.04

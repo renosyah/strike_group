@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/infantry/infantry.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+player_id = ""
+entity_name = "Riflemen"
+entity_icon = ""
+description = ""
+node_name = "riflement"
+network_id = 0
+scene_path = "res://entity/unit/ground_unit/infantry/riflemen/riflemen.tscn"
+position = Vector3( 0, 0, 0 )
+level = 1
+base_attack_damage = 10
+base_max_hp = 250
+base_xp = 0
+current_xp = 0
+max_xp_cap = 0
+team = 250
+color_coat = Color( 0.329412, 0.329412, 0.329412, 1 )

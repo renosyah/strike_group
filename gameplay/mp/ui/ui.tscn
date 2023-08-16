@@ -1,0 +1,387 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://addons/joystick/virtual_joystick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/fps_ping_displayer/fps_ping_displayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/mp/ui/ui.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/gameplay/crosshair/crosshair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/icons/run.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/gameplay/damage_indicator/damage_direction.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/ui/icons/ammo.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/fonts/montserrat_eb_16.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/ui/icons/cicle.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/icons/weapon/m9.png" type="Texture" id=10]
+[ext_resource path="res://addons/SafeArea/SafeArea.gd" type="Script" id=11]
+[ext_resource path="res://assets/ui/gameplay/compass/compass.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/ui/gameplay/target_info/target_info.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/ui/menu/menu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/ui/icons/menu.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 12
+corner_radius_bottom_left = 12
+
+[node name="ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+squad_info_holder = NodePath("CanvasLayer/Control/SafeArea/VBoxContainer3/HBoxContainer/squad")
+unit_inventory_holder = NodePath("CanvasLayer/Control/SafeArea/VBoxContainer3/HBoxContainer/inventory")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="crosshair" parent="CanvasLayer/Control" instance=ExtResource( 4 )]
+
+[node name="damage_direction" parent="CanvasLayer/Control" instance=ExtResource( 6 )]
+
+[node name="SafeArea" type="MarginContainer" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 11 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea"]
+margin_right = 600.0
+margin_bottom = 1024.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 495.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer"]
+margin_right = 600.0
+margin_bottom = 140.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="HBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 109.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 105, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+margin_right = 5.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 5, 0 )
+mouse_filter = 2
+
+[node name="compass" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource( 12 )]
+margin_left = 9.0
+margin_right = 109.0
+margin_bottom = 140.0
+size_flags_horizontal = 0
+
+[node name="MarginContainer3" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 113.0
+margin_right = 491.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+
+[node name="target_info" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3" instance=ExtResource( 13 )]
+margin_left = 50.0
+margin_right = 328.0
+margin_bottom = 86.0
+size_flags_horizontal = 4
+
+[node name="MarginContainer2" type="HBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 495.0
+margin_right = 600.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 105, 0 )
+mouse_filter = 2
+alignment = 2
+
+[node name="menu" type="Button" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+margin_left = 25.0
+margin_right = 105.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 20, 20 )
+mouse_filter = 2
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer"]
+margin_top = 144.0
+margin_right = 600.0
+margin_bottom = 495.0
+rect_min_size = Vector2( 0, 10 )
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="Control" parent="CanvasLayer/Control/SafeArea/VBoxContainer"]
+margin_top = 499.0
+margin_right = 600.0
+margin_bottom = 995.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="joystick" parent="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer2" instance=ExtResource( 1 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="fps_ping_displayer" parent="CanvasLayer/Control/SafeArea/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 999.0
+margin_right = 600.0
+margin_bottom = 1024.0
+mode = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea"]
+margin_right = 600.0
+margin_bottom = 1024.0
+mouse_filter = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer3"]
+margin_top = 940.0
+margin_right = 600.0
+margin_bottom = 940.0
+mouse_filter = 2
+
+[node name="squad" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer3/HBoxContainer"]
+margin_right = 100.0
+rect_min_size = Vector2( 100, 0 )
+mouse_filter = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer3/HBoxContainer"]
+margin_left = 104.0
+margin_right = 496.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="inventory" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer3/HBoxContainer"]
+margin_left = 500.0
+margin_right = 600.0
+rect_min_size = Vector2( 100, 0 )
+mouse_filter = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SafeArea/VBoxContainer3"]
+margin_top = 944.0
+margin_right = 600.0
+margin_bottom = 1024.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="buttons" type="Control" parent="CanvasLayer/Control/SafeArea"]
+margin_right = 600.0
+margin_bottom = 1024.0
+mouse_filter = 2
+
+[node name="left_group" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea/buttons"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -124.0
+margin_right = 80.0
+margin_bottom = 124.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/SafeArea/buttons/left_group"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+mouse_filter = 2
+
+[node name="retreat" type="Button" parent="CanvasLayer/Control/SafeArea/buttons/left_group"]
+margin_top = 84.0
+margin_right = 80.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+custom_fonts/font = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SafeArea/buttons/left_group/retreat"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 20, 20 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/SafeArea/buttons/left_group/retreat"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+
+[node name="cycle_weapon" type="Button" parent="CanvasLayer/Control/SafeArea/buttons/left_group"]
+margin_top = 168.0
+margin_right = 80.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+custom_fonts/font = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SafeArea/buttons/left_group/cycle_weapon"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_rotation = -41.7094
+rect_pivot_offset = Vector2( 20, 20 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/SafeArea/buttons/left_group/cycle_weapon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 20, 20 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/SafeArea/buttons/left_group/cycle_weapon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="right_group" type="VBoxContainer" parent="CanvasLayer/Control/SafeArea/buttons"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="reload" type="Button" parent="CanvasLayer/Control/SafeArea/buttons/right_group"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+custom_fonts/font = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/SafeArea/buttons/right_group/reload"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_rotation = -41.7094
+rect_pivot_offset = Vector2( 20, 20 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/SafeArea/buttons/right_group/reload"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="button_tween" type="Tween" parent="CanvasLayer/Control/SafeArea/buttons"]
+
+[node name="menu" parent="CanvasLayer/Control" instance=ExtResource( 14 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[connection signal="pressed" from="CanvasLayer/Control/SafeArea/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SafeArea/buttons/left_group/retreat" to="." method="_on_retreat_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SafeArea/buttons/left_group/cycle_weapon" to="." method="_on_cycle_weapon_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SafeArea/buttons/right_group/reload" to="." method="_on_reload_pressed"]
+[connection signal="on_main_menu_press" from="CanvasLayer/Control/menu" to="." method="_on_menu_on_main_menu_press"]
+[connection signal="on_resume_press" from="CanvasLayer/Control/menu" to="." method="_on_menu_on_resume_press"]

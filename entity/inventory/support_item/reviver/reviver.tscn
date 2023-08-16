@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://entity/inventory/support_item/reviver/reviver.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entity/inventory/support_item/reviver/reviver.gd" type="Script" id=2]
+[ext_resource path="res://assets/model/area.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=13]
+resource_name = "Material.004"
+albedo_color = Color( 0, 0, 1, 1 )
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=8]
+resource_name = "Material.005"
+albedo_color = Color( 0.025394, 0.025394, 0.025394, 1 )
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=14]
+resource_name = "Material.005"
+albedo_color = Color( 0.560784, 0.560784, 0.560784, 1 )
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.203922, 1, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+flags_albedo_tex_force_srgb = true
+flags_do_not_receive_shadows = true
+albedo_color = Color( 0, 0.254902, 1, 0.635294 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 3, 0.4, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance3:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MeshInstance3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "heal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.4, 0 ), Vector3( 3.2, 0.4, 3.2 ), Vector3( 3, 0.4, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance3:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MeshInstance3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="CylinderShape" id=5]
+height = 4.0
+radius = 3.0
+
+[node name="reviver" type="Spatial"]
+script = ExtResource( 2 )
+equip_animation = "equip_item"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 13 )
+material/1 = SubResource( 8 )
+material/2 = SubResource( 14 )
+material/3 = SubResource( 11 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 3, 0, 0, 0, 0.4, 0, 0, 0, 3, 0, -0.14248, 0 )
+visible = false
+cast_shadow = 0
+mesh = ExtResource( 3 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance3"]
+root_node = NodePath("../..")
+anims/RESET = SubResource( 3 )
+anims/heal = SubResource( 4 )
+
+[node name="area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629278, 0 )
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="area"]
+shape = SubResource( 5 )
+
+[node name="healing_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="beep_time" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "Sfx"
+
+[connection signal="timeout" from="healing_timer" to="." method="_on_healing_timer_timeout"]
+[connection signal="timeout" from="beep_time" to="." method="_on_beep_time_timeout"]

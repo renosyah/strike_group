@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ui/fonts/montserrat_eb_14.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/main_menu/infantry_info/infantry_info.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 1, 0.207843, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="infantry_info" type="MarginContainer"]
+margin_right = 125.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 125, 60 )
+mouse_filter = 2
+size_flags_horizontal = 0
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 125.0
+margin_bottom = 60.0
+mouse_filter = 0
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 5.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 5, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 9.0
+margin_right = 116.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 45 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+margin_right = 107.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/MarginContainer"]
+margin_right = 107.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+margin_right = 107.0
+margin_bottom = 60.0
+mouse_filter = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 13.0
+margin_right = 23.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="unit_name" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 27.0
+margin_top = 22.0
+margin_right = 80.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 1 )
+text = "Pvt Alen"
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 84.0
+margin_right = 94.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 120.0
+margin_right = 125.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 5, 0 )
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="."]
+margin_right = 125.0
+margin_bottom = 60.0
+custom_styles/focus = SubResource( 3 )
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

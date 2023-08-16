@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/holo.obj-6171c9f61e498a91c3f22aee6bf65ebc.mesh"
+
+[deps]
+
+files=[ "res://.import/holo.obj-6171c9f61e498a91c3f22aee6bf65ebc.mesh" ]
+
+source_file="res://entity/inventory/weapon_mod/scope/holo/holo.obj"
+dest_files=[ "res://.import/holo.obj-6171c9f61e498a91c3f22aee6bf65ebc.mesh", "res://.import/holo.obj-6171c9f61e498a91c3f22aee6bf65ebc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

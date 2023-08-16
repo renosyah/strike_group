@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entity/inventory/gear/Gear.gd" type="Script" id=1]
+[ext_resource path="res://entity/inventory/gear/backpack/radio_backpack/radio_backpack.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/4:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "beep"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/4:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1, 1.5, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="radio_backpack" type="Spatial"]
+script = ExtResource( 1 )
+type_gear = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+cast_shadow = 0
+mesh = ExtResource( 2 )
+software_skinning_transform_normals = false
+material/4 = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "beep"
+anims/RESET = SubResource( 2 )
+anims/beep = SubResource( 3 )

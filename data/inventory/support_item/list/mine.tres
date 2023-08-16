@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/inventory/support_item/support_item_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+type = 2
+player_id = ""
+item_name = "Mine"
+entity_name = ""
+entity_icon = "res://assets/ui/icons/support_item/ap_mine.png"
+description = "Simple mine, can only deploy 5 because of geneva convention"
+node_name = ""
+network_id = 0
+scene_path = "res://entity/inventory/support_item/mine/mine.tscn"
+position = Vector3( 0, 0, 0 )

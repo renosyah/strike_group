@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://entity/inventory/support_item/drone_control/drone_control.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entity/inventory/support_item/drone_control/drone_control.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=23]
+resource_name = "Material.004"
+albedo_color = Color( 0.988235, 0, 1, 1 )
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=24]
+resource_name = "Material.005"
+albedo_color = Color( 0.025394, 0.025394, 0.025394, 1 )
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=25]
+resource_name = "Material.005"
+albedo_color = Color( 0.560784, 0.560784, 0.560784, 1 )
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_color = Color( 0, 0.211765, 1, 1 )
+
+[node name="drone_control" type="Spatial"]
+script = ExtResource( 3 )
+equip_animation = "equip_item"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00189698, 0.00125897, -0.00216073 )
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 23 )
+material/1 = SubResource( 24 )
+material/2 = SubResource( 25 )
+material/3 = SubResource( 22 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "Sfx"
+
+[node name="cooldown_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="lifetime_timer" type="Timer" parent="."]
+wait_time = 45.0
+one_shot = true
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4 )
+
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="lifetime_timer" to="." method="_on_lifetime_timer_timeout"]

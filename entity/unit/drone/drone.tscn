@@ -1,0 +1,228 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://entity/unit/drone/drone.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entity/unit/drone/drone_prop.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://entity/unit/drone/Drone.gd" type="Script" id=3]
+[ext_resource path="res://addons/explosion/material.tres" type="Material" id=4]
+[ext_resource path="res://assets/utils/spotter/unit_spotter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/explosion/quick_explosion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entity/unit/drone/icon.png" type="Texture" id=7]
+[ext_resource path="res://entity/unit/drone/buzz_noise.wav" type="AudioStream" id=8]
+
+[sub_resource type="SpatialMaterial" id=31]
+albedo_color = Color( 0.580392, 0, 0.741176, 1 )
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_color = Color( 0.12549, 0.12549, 0.12549, 1 )
+
+[sub_resource type="SpatialMaterial" id=33]
+flags_unshaded = true
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SphereShape" id=34]
+radius = 0.459318
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial/props_1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spatial/props_2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/props_3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Spatial/props_4:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Spatial/MeshInstance:material/2:albedo_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "blade_spin"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial/props_1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 360, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spatial/props_2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/props_3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Spatial/props_4:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 360, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Spatial/MeshInstance:material/2:albedo_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="QuadMesh" id=10]
+material = ExtResource( 4 )
+size = Vector2( 8, 8 )
+
+[node name="drone" type="KinematicBody"]
+collision_layer = 0
+script = ExtResource( 3 )
+speed = 8
+margin = 0.2
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="icon" type="Sprite3D" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+billboard = 1
+double_sided = false
+no_depth_test = true
+texture = ExtResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+software_skinning_transform_normals = false
+material/0 = SubResource( 31 )
+material/1 = SubResource( 32 )
+material/2 = SubResource( 33 )
+
+[node name="props_1" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263394, 0.0654671, -0.286188 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+software_skinning_transform_normals = false
+
+[node name="props_2" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30222, 0.0620215, -0.297243 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+software_skinning_transform_normals = false
+
+[node name="props_3" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269059, 0.0723586, 0.325721 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+software_skinning_transform_normals = false
+
+[node name="props_4" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302721, 0.0654671, 0.334231 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+software_skinning_transform_normals = false
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 34 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "blade_spin"
+anims/RESET = SubResource( 29 )
+anims/blade_spin = SubResource( 30 )
+
+[node name="unit_spotter" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
+detection_range = 16
+
+[node name="attack_delay" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211048, 0 )
+
+[node name="Explosion1" parent="." instance=ExtResource( 6 )]
+mesh = SubResource( 10 )
+
+[node name="buzz_noise" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 8 )
+bus = "Sfx"

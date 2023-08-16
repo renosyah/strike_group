@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mp_z.obj-5f1569d83376e7960ddf3671b88e5f18.mesh"
+
+[deps]
+
+files=[ "res://.import/mp_z.obj-5f1569d83376e7960ddf3671b88e5f18.mesh" ]
+
+source_file="res://entity/inventory/weapon/smg/mp_z/mp_z.obj"
+dest_files=[ "res://.import/mp_z.obj-5f1569d83376e7960ddf3671b88e5f18.mesh", "res://.import/mp_z.obj-5f1569d83376e7960ddf3671b88e5f18.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

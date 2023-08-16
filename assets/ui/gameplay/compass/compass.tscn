@@ -1,0 +1,182 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ui/gameplay/compass/circle_with_dot.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/gameplay/compass/bar.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/gameplay/compass/compass.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/fonts/montserrat_eb_14.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/ui/gameplay/compass/arrow.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.196078, 0.196078, 0.196078, 0.670588 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[node name="compass" type="MarginContainer"]
+margin_right = 100.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 100 )
+mouse_filter = 2
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 100.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+modulate = Color( 1, 1, 1, 0.7 )
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 10, 10 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/MarginContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+
+[node name="arrow" type="Control" parent="VBoxContainer/MarginContainer/Control2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 5.0
+margin_bottom = 5.0
+rect_pivot_offset = Vector2( 5, 5 )
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/MarginContainer/Control2/arrow"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 5.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 10, 10 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer/Control2/arrow"]
+modulate = Color( 1, 1, 1, 0.7 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -36.0
+margin_right = 3.0
+margin_bottom = -6.0
+rect_min_size = Vector2( 8, 8 )
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 5, 30 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+
+[node name="inner_ring" type="Control" parent="VBoxContainer/MarginContainer/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 50, 50 )
+mouse_filter = 2
+
+[node name="n" type="Label" parent="VBoxContainer/MarginContainer/Control2/inner_ring"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -8.0
+margin_top = 7.0
+margin_right = 8.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 8, 8 )
+custom_fonts/font = ExtResource( 4 )
+text = "N"
+align = 1
+valign = 1
+
+[node name="w" type="Label" parent="VBoxContainer/MarginContainer/Control2/inner_ring"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -8.0
+margin_right = 24.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 8, 8 )
+custom_fonts/font = ExtResource( 4 )
+text = "W"
+align = 1
+valign = 1
+
+[node name="e" type="Label" parent="VBoxContainer/MarginContainer/Control2/inner_ring"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -8.0
+margin_right = -5.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 8, 8 )
+custom_fonts/font = ExtResource( 4 )
+text = "E"
+align = 1
+valign = 1
+
+[node name="s" type="Label" parent="VBoxContainer/MarginContainer/Control2/inner_ring"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -23.0
+margin_right = 8.0
+margin_bottom = -7.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 8, 8 )
+custom_fonts/font = ExtResource( 4 )
+text = "S"
+align = 1
+valign = 1
+
+[node name="bearing" type="Label" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="distance" type="Label" parent="VBoxContainer"]
+margin_top = 124.0
+margin_right = 100.0
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+align = 1
+valign = 1

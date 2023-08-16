@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/marksman_scope.obj-a14c65c13108d1ce36e9167cbedb576d.mesh"
+
+[deps]
+
+files=[ "res://.import/marksman_scope.obj-a14c65c13108d1ce36e9167cbedb576d.mesh" ]
+
+source_file="res://entity/inventory/weapon_mod/scope/marksman_scope/marksman_scope.obj"
+dest_files=[ "res://.import/marksman_scope.obj-a14c65c13108d1ce36e9167cbedb576d.mesh", "res://.import/marksman_scope.obj-a14c65c13108d1ce36e9167cbedb576d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

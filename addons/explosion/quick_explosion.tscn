@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/explosion/material.tres" type="Material" id=1]
+
+[sub_resource type="QuadMesh" id=10]
+material = ExtResource( 1 )
+size = Vector2( 8, 8 )
+
+[node name="Explosion1" type="CPUParticles"]
+cast_shadow = 0
+emitting = false
+amount = 2
+lifetime = 2.13
+one_shot = true
+explosiveness = 0.91
+randomness = 0.84
+fixed_fps = 30
+mesh = SubResource( 10 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.49
+angular_velocity = 10.28
+angular_velocity_random = 1.0
+linear_accel = -1.0
+angle_random = 1.0

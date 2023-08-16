@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entity/inventory/weapon_mod/WeaponMod.gd" type="Script" id=1]
+
+
+[node name="standar_barel" type="Spatial"]
+script = ExtResource( 1 )
+dec_spread_bonus = 0.07
+inc_crit_bonus = 0.14

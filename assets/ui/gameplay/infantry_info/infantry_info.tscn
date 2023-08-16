@@ -1,0 +1,209 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/ui/fonts/montserrat_eb_14.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/bar/hp_bar.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/gameplay/infantry_info/infantry_info.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/bar/bar_empty.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/bar/bar.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/gameplay/inventory_info/blank.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/gameplay/inventory_info/blank_center.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.05, 0.05, 0.05, 0.75 )
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 0, 0, 1 )
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="infantry_info" type="Button"]
+margin_right = 150.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 150, 70 )
+size_flags_horizontal = 0
+custom_styles/focus = SubResource( 3 )
+flat = true
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_right = 156.0
+margin_bottom = 70.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel2" type="Panel" parent="MarginContainer"]
+visible = false
+margin_right = 156.0
+margin_bottom = 70.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+
+[node name="Panel3" type="Panel" parent="MarginContainer"]
+margin_right = 156.0
+margin_bottom = 70.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 156.0
+margin_bottom = 70.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 10.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 14.0
+margin_right = 142.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="unit_name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 12.0
+margin_right = 128.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+text = "Pvt Alen"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 57.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 24.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 24, 24 )
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+margin_right = 24.0
+margin_bottom = 25.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="unit_level" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 28.0
+margin_right = 128.0
+margin_bottom = 25.0
+
+[node name="hp_bar" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 12 )
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="hp_bar_bg" type="TextureProgress" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/hp_bar"]
+margin_right = 100.0
+margin_bottom = 16.0
+value = 50.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 1, 0.376471, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 32
+stretch_margin_right = 32
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="hp_bar" type="TextureProgress" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/hp_bar"]
+margin_right = 100.0
+margin_bottom = 16.0
+value = 22.0
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 0.14902, 1, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 32
+stretch_margin_right = 32
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RichTextLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/hp_bar"]
+margin_right = 100.0
+margin_bottom = 16.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "100/100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/hp_bar"]
+
+[node name="ammo" type="TextureProgress" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 100.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 5 )
+size_flags_horizontal = 3
+max_value = 10.0
+value = 5.0
+texture_over = ExtResource( 7 )
+texture_progress = ExtResource( 6 )
+tint_progress = Color( 0.839216, 0.690196, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 146.0
+margin_right = 156.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2

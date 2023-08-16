@@ -1,0 +1,459 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "BaseEntity",
+"class": "BaseBuilding",
+"language": "GDScript",
+"path": "res://entity/building/BaseBuilding.gd"
+}, {
+"base": "CPUParticles",
+"class": "BaseCustomParticle",
+"language": "GDScript",
+"path": "res://assets/visual_effect/hit_particle/custom_particle/baseCustomParticle.gd"
+}, {
+"base": "Resource",
+"class": "BaseData",
+"language": "GDScript",
+"path": "res://data/BaseData.gd"
+}, {
+"base": "KinematicBody",
+"class": "BaseEntity",
+"language": "GDScript",
+"path": "res://entity/BaseEntity.gd"
+}, {
+"base": "Node",
+"class": "BaseGameplay",
+"language": "GDScript",
+"path": "res://gameplay/BaseGameplay.gd"
+}, {
+"base": "BaseGameplay",
+"class": "BaseGameplayMp",
+"language": "GDScript",
+"path": "res://gameplay/mp/base_gameplay_mp.gd"
+}, {
+"base": "Control",
+"class": "BaseGameplayUi",
+"language": "GDScript",
+"path": "res://gameplay/ui/BaseGameplayUI.gd"
+}, {
+"base": "StaticBody",
+"class": "BaseMap",
+"language": "GDScript",
+"path": "res://map/BaseMap.gd"
+}, {
+"base": "BaseGameplay",
+"class": "BaseShowcaseMp",
+"language": "GDScript",
+"path": "res://gameplay/showcase/base_showcase_mp.gd"
+}, {
+"base": "BaseEntity",
+"class": "BaseUnit",
+"language": "GDScript",
+"path": "res://entity/unit/BaseUnit.gd"
+}, {
+"base": "MarginContainer",
+"class": "Compass",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/compass/compass.gd"
+}, {
+"base": "Control",
+"class": "Crosshair",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/crosshair/crosshair.gd"
+}, {
+"base": "ImageTexture",
+"class": "CustomGradientTexture",
+"language": "GDScript",
+"path": "res://addons/maujoe.custom_gradient_texture/custom_gradient_texture.gd"
+}, {
+"base": "BaseCustomParticle",
+"class": "CustomMeshParticle",
+"language": "GDScript",
+"path": "res://assets/visual_effect/hit_particle/custom_particle/mesh/custom_mesh_particle.gd"
+}, {
+"base": "BaseCustomParticle",
+"class": "CustomTextParticle",
+"language": "GDScript",
+"path": "res://assets/visual_effect/hit_particle/custom_particle/text/custom_text_particle.gd"
+}, {
+"base": "Control",
+"class": "DamageDirection",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/damage_indicator/damage_direction.gd"
+}, {
+"base": "BaseUnit",
+"class": "Drone",
+"language": "GDScript",
+"path": "res://entity/unit/drone/Drone.gd"
+}, {
+"base": "Spatial",
+"class": "FixCamera",
+"language": "GDScript",
+"path": "res://assets/utils/fix_camera/fix_camera.gd"
+}, {
+"base": "Node",
+"class": "GDUUID",
+"language": "GDScript",
+"path": "res://addons/godot-uuid/uuid.gd"
+}, {
+"base": "Inventory",
+"class": "Gear",
+"language": "GDScript",
+"path": "res://entity/inventory/gear/Gear.gd"
+}, {
+"base": "InventoryData",
+"class": "GearData",
+"language": "GDScript",
+"path": "res://data/inventory/gear/gear_data.gd"
+}, {
+"base": "BaseUnit",
+"class": "GroundUnit",
+"language": "GDScript",
+"path": "res://entity/unit/ground_unit/GroundUnit.gd"
+}, {
+"base": "MeshInstance",
+"class": "Highlight",
+"language": "GDScript",
+"path": "res://assets/utils/highlight/highlight.gd"
+}, {
+"base": "Spatial",
+"class": "HitParticle",
+"language": "GDScript",
+"path": "res://assets/visual_effect/hit_particle/hit_particle.gd"
+}, {
+"base": "GroundUnit",
+"class": "Infantry",
+"language": "GDScript",
+"path": "res://entity/unit/ground_unit/infantry/Infantry.gd"
+}, {
+"base": "BaseData",
+"class": "InfantryData",
+"language": "GDScript",
+"path": "res://data/infantry/infantry.gd"
+}, {
+"base": "Button",
+"class": "InfantryInfo",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/infantry_info/infantry_info.gd"
+}, {
+"base": "InputEventAction",
+"class": "InputEventMultiScreenDrag",
+"language": "GDScript",
+"path": "res://addons/Godot-Touch-Input-Manager/CustomInputEvents/InputEventMultiScreenDrag.gd"
+}, {
+"base": "InputEventAction",
+"class": "InputEventScreenPinch",
+"language": "GDScript",
+"path": "res://addons/Godot-Touch-Input-Manager/CustomInputEvents/InputEventScreenPinch.gd"
+}, {
+"base": "InputEventAction",
+"class": "InputEventScreenTwist",
+"language": "GDScript",
+"path": "res://addons/Godot-Touch-Input-Manager/CustomInputEvents/InputEventScreenTwist.gd"
+}, {
+"base": "InputEventAction",
+"class": "InputEventSingleScreenDrag",
+"language": "GDScript",
+"path": "res://addons/Godot-Touch-Input-Manager/CustomInputEvents/InputEventSingleScreenDrag.gd"
+}, {
+"base": "InputEventAction",
+"class": "InputEventSingleScreenTap",
+"language": "GDScript",
+"path": "res://addons/Godot-Touch-Input-Manager/CustomInputEvents/InputEventSingleScreenTap.gd"
+}, {
+"base": "InputEventAction",
+"class": "InputEventSingleScreenTouch",
+"language": "GDScript",
+"path": "res://addons/Godot-Touch-Input-Manager/CustomInputEvents/InputEventSingleScreenTouch.gd"
+}, {
+"base": "Spatial",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://entity/inventory/Inventory.gd"
+}, {
+"base": "BaseData",
+"class": "InventoryData",
+"language": "GDScript",
+"path": "res://data/inventory/inventory_data.gd"
+}, {
+"base": "Button",
+"class": "InventoryInfo",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/inventory_info/inventory_info.gd"
+}, {
+"base": "Node",
+"class": "LevelSystem",
+"language": "GDScript",
+"path": "res://data/level_system/level_system.gd"
+}, {
+"base": "StaticBody",
+"class": "MapEntity",
+"language": "GDScript",
+"path": "res://entity/map_entity/MapEntity.gd"
+}, {
+"base": "Sprite",
+"class": "MarkerItem",
+"language": "GDScript",
+"path": "res://addons/3d-marker/marker_item/marker_item.gd"
+}, {
+"base": "NetworkConfiguration",
+"class": "NetworkClient",
+"language": "GDScript",
+"path": "res://addons/network/helper/NetworkClient.gd"
+}, {
+"base": "Node",
+"class": "NetworkConfiguration",
+"language": "GDScript",
+"path": "res://addons/network/helper/NetworkConfiguration.gd"
+}, {
+"base": "Node",
+"class": "NetworkPlayer",
+"language": "GDScript",
+"path": "res://addons/network/helper/NetworkPlayer.gd"
+}, {
+"base": "NetworkConfiguration",
+"class": "NetworkServer",
+"language": "GDScript",
+"path": "res://addons/network/helper/NetworkServer.gd"
+}, {
+"base": "Node",
+"class": "NoiseMaker",
+"language": "GDScript",
+"path": "res://map/noise_maker/NoiseMaker.gd"
+}, {
+"base": "KinematicBody",
+"class": "PlantExplosive",
+"language": "GDScript",
+"path": "res://entity/plant_explosive/PlantExplosive.gd"
+}, {
+"base": "BaseData",
+"class": "PlayerData",
+"language": "GDScript",
+"path": "res://data/player/player_data.gd"
+}, {
+"base": "Spatial",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://entity/projectile/Projectile.gd"
+}, {
+"base": "Node",
+"class": "RandomNameGenerator",
+"language": "GDScript",
+"path": "res://addons/random-name/random_names.gd"
+}, {
+"base": "Node",
+"class": "SaveLoad",
+"language": "GDScript",
+"path": "res://addons/save_load/save_load.gd"
+}, {
+"base": "CanvasLayer",
+"class": "SceneTransision",
+"language": "GDScript",
+"path": "res://assets/ui/loading/scene_transition.gd"
+}, {
+"base": "Spatial",
+"class": "ScreenMarker",
+"language": "GDScript",
+"path": "res://addons/3d-marker/3d_marker.gd"
+}, {
+"base": "Node",
+"class": "ServerAdvertiser",
+"language": "GDScript",
+"path": "res://addons/LANServerBroadcast/server_advertiser/ServerAdvertiser.gd"
+}, {
+"base": "Node",
+"class": "ServerListener",
+"language": "GDScript",
+"path": "res://addons/LANServerBroadcast/server_listener/ServerListener.gd"
+}, {
+"base": "BaseData",
+"class": "SettingData",
+"language": "GDScript",
+"path": "res://data/setting_data/setting_data.gd"
+}, {
+"base": "Spatial",
+"class": "SquadFormation",
+"language": "GDScript",
+"path": "res://assets/utils/squad_formation/squad_formation.gd"
+}, {
+"base": "Inventory",
+"class": "SupportItem",
+"language": "GDScript",
+"path": "res://entity/inventory/support_item/SupportItem.gd"
+}, {
+"base": "InventoryData",
+"class": "SupportItemData",
+"language": "GDScript",
+"path": "res://data/inventory/support_item/support_item_data.gd"
+}, {
+"base": "MarginContainer",
+"class": "TargetInfo",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/target_info/target_info.gd"
+}, {
+"base": "Area",
+"class": "UnitSpotter",
+"language": "GDScript",
+"path": "res://assets/utils/spotter/unit_spotter.gd"
+}, {
+"base": "MarginContainer",
+"class": "VirtualJoystick",
+"language": "GDScript",
+"path": "res://addons/joystick/virtual_joystick.gd"
+}, {
+"base": "MeshInstance",
+"class": "Water",
+"language": "GDScript",
+"path": "res://map/water/water.gd"
+}, {
+"base": "Inventory",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://entity/inventory/weapon/Weapon.gd"
+}, {
+"base": "InventoryData",
+"class": "WeaponData",
+"language": "GDScript",
+"path": "res://data/inventory/weapon/weapon_data.gd"
+}, {
+"base": "Button",
+"class": "WeaponInfo",
+"language": "GDScript",
+"path": "res://assets/ui/gameplay/weapon_info/weapon_info.gd"
+}, {
+"base": "Inventory",
+"class": "WeaponMod",
+"language": "GDScript",
+"path": "res://entity/inventory/weapon_mod/WeaponMod.gd"
+}, {
+"base": "InventoryData",
+"class": "WeaponModData",
+"language": "GDScript",
+"path": "res://data/inventory/weapon_mod/weapon_mod_data.gd"
+}, {
+"base": "Sprite3D",
+"class": "WoundedMarker",
+"language": "GDScript",
+"path": "res://assets/utils/wounded_marker/wounded_marker.gd"
+} ]
+_global_script_class_icons={
+"BaseBuilding": "",
+"BaseCustomParticle": "",
+"BaseData": "",
+"BaseEntity": "",
+"BaseGameplay": "",
+"BaseGameplayMp": "",
+"BaseGameplayUi": "",
+"BaseMap": "",
+"BaseShowcaseMp": "",
+"BaseUnit": "",
+"Compass": "",
+"Crosshair": "",
+"CustomGradientTexture": "",
+"CustomMeshParticle": "",
+"CustomTextParticle": "",
+"DamageDirection": "",
+"Drone": "",
+"FixCamera": "",
+"GDUUID": "",
+"Gear": "",
+"GearData": "",
+"GroundUnit": "",
+"Highlight": "",
+"HitParticle": "",
+"Infantry": "",
+"InfantryData": "",
+"InfantryInfo": "",
+"InputEventMultiScreenDrag": "",
+"InputEventScreenPinch": "",
+"InputEventScreenTwist": "",
+"InputEventSingleScreenDrag": "",
+"InputEventSingleScreenTap": "",
+"InputEventSingleScreenTouch": "",
+"Inventory": "",
+"InventoryData": "",
+"InventoryInfo": "",
+"LevelSystem": "",
+"MapEntity": "",
+"MarkerItem": "",
+"NetworkClient": "",
+"NetworkConfiguration": "",
+"NetworkPlayer": "",
+"NetworkServer": "",
+"NoiseMaker": "",
+"PlantExplosive": "",
+"PlayerData": "",
+"Projectile": "",
+"RandomNameGenerator": "",
+"SaveLoad": "",
+"SceneTransision": "",
+"ScreenMarker": "",
+"ServerAdvertiser": "res://addons/LANServerBroadcast/server_advertiser/server_advertiser.png",
+"ServerListener": "res://addons/LANServerBroadcast/server_listener/server_listener.png",
+"SettingData": "",
+"SquadFormation": "",
+"SupportItem": "",
+"SupportItemData": "",
+"TargetInfo": "",
+"UnitSpotter": "",
+"VirtualJoystick": "",
+"Water": "",
+"Weapon": "",
+"WeaponData": "",
+"WeaponInfo": "",
+"WeaponMod": "",
+"WeaponModData": "",
+"WoundedMarker": ""
+}
+
+[application]
+
+config/name="Strike Group"
+run/main_scene="res://menu/main_menu/main_menu.tscn"
+config/icon="res://icn.png"
+
+[autoload]
+
+Network="*res://addons/network/Network.gd"
+NetworkLobbyManager="*res://addons/network/lobby-manager/NetworkLobbyManager.gd"
+Global="*res://global/global.gd"
+
+[display]
+
+window/size/width=600
+window/size/height=1024
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/SafeArea/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+quality/shading/force_vertex_shading=true
+gles2/compatibility/disable_half_float=true
+environment/default_environment="res://default_env.tres"

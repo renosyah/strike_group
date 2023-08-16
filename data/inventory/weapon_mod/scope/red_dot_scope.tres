@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/inventory/weapon_mod/weapon_mod_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+type = 1
+player_id = ""
+item_name = "MT-4 red dot"
+entity_name = ""
+entity_icon = "res://assets/ui/icons/buff.png"
+description = "Standart issue red dot"
+node_name = ""
+network_id = 0
+scene_path = "res://entity/inventory/weapon_mod/scope/red_dot/red_dot.tscn"
+position = Vector3( 0, 0, 0 )

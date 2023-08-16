@@ -1,0 +1,354 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/ui/fps_ping_displayer/fps_ping_displayer.gd" type="Script" id=1]
+
+[node name="fps_ping_displayer" type="MarginContainer"]
+margin_right = 247.0
+rect_min_size = Vector2( 0, 25 )
+mouse_filter = 2
+script = ExtResource( 1 )
+
+[node name="simple" type="HBoxContainer" parent="."]
+visible = false
+margin_right = 247.0
+margin_bottom = 25.0
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="simple"]
+margin_right = 10.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="fps" type="Label" parent="simple"]
+margin_left = 14.0
+margin_top = 112.0
+margin_right = 44.0
+margin_bottom = 126.0
+text = "Os : "
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="simple"]
+margin_left = 48.0
+margin_right = 58.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="ping" type="Label" parent="simple"]
+margin_left = 62.0
+margin_top = 112.0
+margin_right = 138.0
+margin_bottom = 126.0
+text = "Ping : 0/ms "
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="simple"]
+margin_left = 142.0
+margin_right = 152.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="detail" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 247.0
+margin_bottom = 238.0
+mouse_filter = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="detail"]
+margin_right = 247.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 12 )
+mouse_filter = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="detail"]
+margin_top = 16.0
+margin_right = 247.0
+margin_bottom = 30.0
+mouse_filter = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="detail/HBoxContainer7"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="label" type="Label" parent="detail/HBoxContainer7"]
+margin_left = 14.0
+margin_right = 70.0
+margin_bottom = 14.0
+text = "Device : "
+valign = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="detail"]
+margin_top = 34.0
+margin_right = 247.0
+margin_bottom = 48.0
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="detail/HBoxContainer9"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="os" type="Label" parent="detail/HBoxContainer9"]
+margin_left = 14.0
+margin_right = 44.0
+margin_bottom = 14.0
+text = "Os : "
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="detail/HBoxContainer9"]
+margin_left = 48.0
+margin_right = 58.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="platform" type="Label" parent="detail/HBoxContainer9"]
+margin_left = 62.0
+margin_right = 128.0
+margin_bottom = 14.0
+text = "Platform : "
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="detail/HBoxContainer9"]
+margin_left = 132.0
+margin_right = 142.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="detail"]
+margin_top = 52.0
+margin_right = 247.0
+margin_bottom = 66.0
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="detail/HBoxContainer8"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="cpu" type="Label" parent="detail/HBoxContainer8"]
+margin_left = 14.0
+margin_right = 50.0
+margin_bottom = 14.0
+text = "Cpu : "
+valign = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="detail/HBoxContainer8"]
+margin_left = 54.0
+margin_right = 64.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="driver" type="Label" parent="detail/HBoxContainer8"]
+margin_left = 68.0
+margin_right = 119.0
+margin_bottom = 14.0
+text = "Driver : "
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="detail/HBoxContainer8"]
+margin_left = 123.0
+margin_right = 133.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="detail"]
+margin_top = 70.0
+margin_right = 247.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 0, 12 )
+mouse_filter = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="detail"]
+margin_top = 86.0
+margin_right = 247.0
+margin_bottom = 100.0
+mouse_filter = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="detail/HBoxContainer3"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="label" type="Label" parent="detail/HBoxContainer3"]
+margin_left = 14.0
+margin_right = 99.0
+margin_bottom = 14.0
+text = "Performace : "
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="detail"]
+margin_top = 104.0
+margin_right = 247.0
+margin_bottom = 118.0
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="detail/HBoxContainer"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="fps" type="Label" parent="detail/HBoxContainer"]
+margin_left = 14.0
+margin_right = 56.0
+margin_bottom = 14.0
+text = "Fps : 0"
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="detail/HBoxContainer"]
+margin_left = 60.0
+margin_right = 70.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="drawn" type="Label" parent="detail/HBoxContainer"]
+margin_left = 74.0
+margin_right = 133.0
+margin_bottom = 14.0
+text = "Target : 0"
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="detail/HBoxContainer"]
+margin_left = 137.0
+margin_right = 147.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="detail"]
+margin_top = 122.0
+margin_right = 247.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 12 )
+mouse_filter = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="detail"]
+margin_top = 138.0
+margin_right = 247.0
+margin_bottom = 152.0
+mouse_filter = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="detail/HBoxContainer4"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="label" type="Label" parent="detail/HBoxContainer4"]
+margin_left = 14.0
+margin_right = 79.0
+margin_bottom = 14.0
+text = "Memory : "
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="detail"]
+margin_top = 156.0
+margin_right = 247.0
+margin_bottom = 170.0
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="detail/HBoxContainer2"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="memory_usage" type="Label" parent="detail/HBoxContainer2"]
+margin_left = 14.0
+margin_right = 164.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 150, 0 )
+text = "Usage : 0"
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="detail/HBoxContainer2"]
+margin_left = 168.0
+margin_right = 178.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="memory_peak" type="Label" parent="detail/HBoxContainer2"]
+margin_left = 182.0
+margin_right = 233.0
+margin_bottom = 14.0
+text = "Total : 0"
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="detail/HBoxContainer2"]
+margin_left = 237.0
+margin_right = 247.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer7" type="MarginContainer" parent="detail"]
+margin_top = 174.0
+margin_right = 247.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 0, 12 )
+mouse_filter = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="detail"]
+margin_top = 190.0
+margin_right = 247.0
+margin_bottom = 204.0
+mouse_filter = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="detail/HBoxContainer5"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="label" type="Label" parent="detail/HBoxContainer5"]
+margin_left = 14.0
+margin_right = 79.0
+margin_bottom = 14.0
+text = "Network : "
+valign = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="detail"]
+margin_top = 208.0
+margin_right = 247.0
+margin_bottom = 222.0
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="detail/HBoxContainer6"]
+margin_right = 10.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="ping" type="Label" parent="detail/HBoxContainer6"]
+margin_left = 14.0
+margin_right = 61.0
+margin_bottom = 14.0
+text = "Ping : 0"
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="detail/HBoxContainer6"]
+margin_left = 65.0
+margin_right = 75.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="detail"]
+margin_top = 226.0
+margin_right = 247.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 0, 12 )
+mouse_filter = 2

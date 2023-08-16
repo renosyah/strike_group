@@ -1,0 +1,168 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://entity/inventory/weapon/heavy/at_launcher/at_launcher.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entity/inventory/weapon/heavy/at_launcher/at_launcher.gd" type="Script" id=2]
+[ext_resource path="res://entity/projectile/missile_ammo/missile_ammo.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.729412, 0.447059, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+
+[sub_resource type="SphereMesh" id=3]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+albedo_color = Color( 1, 0.345098, 0, 1 )
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fire2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fire"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fire2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="SphereShape" id=8]
+radius = 3.0
+
+[node name="at_launcher" type="Spatial"]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+equip_animation = "equip_at"
+fire_animation = "fire_at"
+reload_animation = "reload_at"
+attack_damage = 125
+attack_delay = 1.0
+reload_delay = 3.2
+attack_range = 12.0
+spread = 1.18
+ammo = 1
+max_ammo = 1
+ammo_pool = 5
+max_ammo_pool = 5
+projectile = ExtResource( 3 )
+barrel_position = NodePath("fire")
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 7 )
+material/1 = SubResource( 1 )
+
+[node name="fire" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00409522, -0.532706 )
+visible = false
+cast_shadow = 0
+mesh = SubResource( 3 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 5 )
+
+[node name="fire3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00409522, 0.541209 )
+visible = false
+cast_shadow = 0
+mesh = SubResource( 3 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 5 )
+
+[node name="fire2" type="MeshInstance" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.00409522, 0.677649 )
+visible = false
+cast_shadow = 0
+mesh = SubResource( 3 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/fire = SubResource( 4 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "Sfx"
+
+[node name="damage_area" type="Area" parent="."]
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="damage_area"]
+shape = SubResource( 8 )

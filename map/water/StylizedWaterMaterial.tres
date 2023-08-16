@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://map/water/SimpleStylizedWaterShader.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/out_color = Color( 0, 0.25098, 0.572549, 1 )
+shader_param/amount = 0.864
+shader_param/uv1_scale = null
+shader_param/uv1_offset = null
+shader_param/uv2_scale = null
+shader_param/uv2_offset = null
+shader_param/beer_factor = 0.04

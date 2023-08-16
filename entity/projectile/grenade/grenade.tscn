@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entity/projectile/grenade/grenade.gd" type="Script" id=1]
+[ext_resource path="res://addons/explosion/quick_explosion.tscn" type="PackedScene" id=3]
+
+[node name="grenade" type="Spatial"]
+script = ExtResource( 1 )
+speed = 12
+max_distance = 50.0
+
+[node name="body" type="Spatial" parent="."]
+
+[node name="Explosion1" parent="." instance=ExtResource( 3 )]
+
+[node name="explosion_timeout" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "Sfx"
+
+[connection signal="timeout" from="explosion_timeout" to="." method="_on_explosion_timeout_timeout"]

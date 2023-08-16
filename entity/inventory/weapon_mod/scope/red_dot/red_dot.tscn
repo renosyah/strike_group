@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entity/inventory/weapon_mod/WeaponMod.gd" type="Script" id=1]
+[ext_resource path="res://entity/inventory/weapon_mod/scope/red_dot/red_dot.obj" type="ArrayMesh" id=2]
+
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+flags_vertex_lighting = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+albedo_color = Color( 1, 0, 0, 0.54902 )
+
+[node name="red_dot" type="Spatial"]
+script = ExtResource( 1 )
+type_mod = 4
+inc_range_bonus = 0.07
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

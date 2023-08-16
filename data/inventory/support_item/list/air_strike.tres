@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/inventory/support_item/support_item_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+type = 2
+player_id = ""
+item_name = "Air Strike"
+entity_name = ""
+entity_icon = "res://assets/ui/icons/support_item/drop_bomb.png"
+description = "Gadget to call air strike"
+node_name = ""
+network_id = 0
+scene_path = "res://entity/inventory/support_item/air_strike/air_strike.tscn"
+position = Vector3( 0, 0, 0 )

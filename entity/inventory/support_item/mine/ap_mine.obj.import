@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ap_mine.obj-2afa71ae224bf68178e2f2430354bc59.mesh"
+
+[deps]
+
+files=[ "res://.import/ap_mine.obj-2afa71ae224bf68178e2f2430354bc59.mesh" ]
+
+source_file="res://entity/inventory/support_item/mine/ap_mine.obj"
+dest_files=[ "res://.import/ap_mine.obj-2afa71ae224bf68178e2f2430354bc59.mesh", "res://.import/ap_mine.obj-2afa71ae224bf68178e2f2430354bc59.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

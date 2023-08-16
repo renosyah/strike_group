@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/akn.obj-7b85dff18ee33f37895a2b1951b1e117.mesh"
+
+[deps]
+
+files=[ "res://.import/akn.obj-7b85dff18ee33f37895a2b1951b1e117.mesh" ]
+
+source_file="res://entity/inventory/weapon/rifle/akn/akn.obj"
+dest_files=[ "res://.import/akn.obj-7b85dff18ee33f37895a2b1951b1e117.mesh", "res://.import/akn.obj-7b85dff18ee33f37895a2b1951b1e117.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

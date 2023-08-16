@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/boonie_hat.obj-30947f51401279bec5c3528d52918b4d.mesh"
+
+[deps]
+
+files=[ "res://.import/boonie_hat.obj-30947f51401279bec5c3528d52918b4d.mesh" ]
+
+source_file="res://entity/inventory/gear/head_gear/boonie_hat/boonie_hat.obj"
+dest_files=[ "res://.import/boonie_hat.obj-30947f51401279bec5c3528d52918b4d.mesh", "res://.import/boonie_hat.obj-30947f51401279bec5c3528d52918b4d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

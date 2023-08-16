@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/inventory/gear/gear_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+type = 3
+player_id = ""
+item_name = "Heavy Helm"
+entity_name = ""
+entity_icon = "res://assets/ui/icons/buff.png"
+description = "Heavy, but it will save you"
+node_name = ""
+network_id = 0
+scene_path = "res://entity/inventory/gear/head_gear/heavy_helm/heavy_helm.tscn"
+position = Vector3( 0, 0, 0 )

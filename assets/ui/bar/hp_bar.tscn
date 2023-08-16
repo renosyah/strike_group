@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/fonts/montserrat_eb_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/bar/bar.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/bar/bar_empty.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/bar/hp_bar.gd" type="Script" id=4]
+
+[node name="hp_bar" type="MarginContainer"]
+margin_right = 250.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 250, 30 )
+script = ExtResource( 4 )
+
+[node name="hp_bar_bg" type="TextureProgress" parent="."]
+margin_right = 250.0
+margin_bottom = 40.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 1, 0.376471, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 32
+stretch_margin_right = 32
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="hp_bar" type="TextureProgress" parent="."]
+margin_right = 250.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 0.14902, 1, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 32
+stretch_margin_right = 32
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_right = 250.0
+margin_bottom = 40.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "1000/1000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

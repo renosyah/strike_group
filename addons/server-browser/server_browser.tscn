@@ -1,0 +1,361 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://addons/server-browser/back.png" type="Texture" id=1]
+[ext_resource path="res://addons/server-browser/font/montserrat_eb_48.tres" type="DynamicFont" id=2]
+[ext_resource path="res://addons/server-browser/font/montserrat_eb_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/server-browser/server_browser.gd" type="Script" id=4]
+[ext_resource path="res://addons/LANServerBroadcast/server_listener/ServerListener.gd" type="Script" id=5]
+[ext_resource path="res://addons/server-browser/refresh.png" type="Texture" id=6]
+[ext_resource path="res://addons/SafeArea/SafeArea.gd" type="Script" id=7]
+[ext_resource path="res://addons/server-browser/search.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/Control/search:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 250, 410 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/Control/search:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -48.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MarginContainer/Control/search:margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -116.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MarginContainer/Control/search:margin_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 52.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MarginContainer/Control/search:margin_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -15.9865 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MarginContainer/Control/find:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Find Host..." ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MarginContainer/Control/find:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.247059 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "loading"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/Control/search:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -48.0, 32.0, -124.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/Control/search:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -116.0, 6.0, 4.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MarginContainer/Control/search:margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 52.0, 132.0, -24.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MarginContainer/Control/search:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -15.999, 106.001, 104.001 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MarginContainer/Control/find:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Find Host...", "Find Host.", "Find Host..", "Find Host...", "Find Host..." ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MarginContainer/Control/find:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.247059 ), Color( 1, 1, 1, 0.619608 ), Color( 1, 1, 1, 0.247059 ) ]
+}
+
+[node name="server_browser" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="server_listener" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../SafeArea/VBoxContainer")
+autoplay = "loading"
+anims/RESET = SubResource( 2 )
+anims/loading = SubResource( 1 )
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 7 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SafeArea"]
+margin_right = 600.0
+margin_bottom = 1024.0
+mouse_filter = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="SafeArea/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 100.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeArea/VBoxContainer/MarginContainer2"]
+margin_right = 600.0
+margin_bottom = 100.0
+
+[node name="back" type="Button" parent="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="TextureRect" parent="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer/back"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin" type="CenterContainer" parent="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 104.0
+margin_right = 496.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer/margin"]
+margin_left = 142.0
+margin_top = 20.0
+margin_right = 249.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Join"
+align = 1
+valign = 1
+
+[node name="refresh" type="Button" parent="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 500.0
+margin_right = 600.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="TextureRect" parent="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer/refresh"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="SafeArea/VBoxContainer"]
+margin_top = 104.0
+margin_right = 600.0
+margin_bottom = 1024.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="TextureRect2" type="ColorRect" parent="SafeArea/VBoxContainer/MarginContainer"]
+margin_right = 600.0
+margin_bottom = 920.0
+mouse_filter = 2
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SafeArea/VBoxContainer/MarginContainer"]
+margin_right = 600.0
+margin_bottom = 920.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SafeArea/VBoxContainer/MarginContainer/ScrollContainer"]
+margin_right = 600.0
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="SafeArea/VBoxContainer/MarginContainer"]
+margin_right = 600.0
+margin_bottom = 920.0
+
+[node name="search" type="TextureRect" parent="SafeArea/VBoxContainer/MarginContainer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -116.0
+margin_right = 52.0
+margin_bottom = -15.9865
+rect_min_size = Vector2( 100, 100 )
+rect_pivot_offset = Vector2( 50, 50 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="find" type="Label" parent="SafeArea/VBoxContainer/MarginContainer/Control"]
+modulate = Color( 1, 1, 1, 0.247059 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -28.0
+margin_right = 128.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "Find Host..."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="error" type="Label" parent="SafeArea/VBoxContainer/MarginContainer"]
+visible = false
+margin_right = 600.0
+margin_bottom = 920.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "..."
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="error_listening" from="server_listener" to="." method="_on_server_listener_error_listening"]
+[connection signal="new_server" from="server_listener" to="." method="_on_server_listener_new_server"]
+[connection signal="remove_server" from="server_listener" to="." method="_on_server_listener_remove_server"]
+[connection signal="pressed" from="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="SafeArea/VBoxContainer/MarginContainer2/HBoxContainer/refresh" to="." method="_on_refresh_pressed"]

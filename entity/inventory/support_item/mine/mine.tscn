@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entity/inventory/support_item/mine/ap_mine.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entity/inventory/support_item/mine/mine.gd" type="Script" id=4]
+
+[sub_resource type="SpatialMaterial" id=30]
+albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[sub_resource type="SpatialMaterial" id=31]
+albedo_color = Color( 0.129412, 0.129412, 0.129412, 1 )
+
+[sub_resource type="SpatialMaterial" id=32]
+flags_unshaded = true
+flags_vertex_lighting = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+albedo_color = Color( 1, 0.294118, 0, 1 )
+
+[node name="mine" type="Spatial"]
+script = ExtResource( 4 )
+equip_animation = "equip_item"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+software_skinning_transform_normals = false
+material/0 = SubResource( 30 )
+material/1 = SubResource( 31 )
+material/2 = SubResource( 32 )
+
+[node name="cooldown_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

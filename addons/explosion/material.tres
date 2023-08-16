@@ -1,0 +1,50 @@
+[gd_resource type="ShaderMaterial" load_steps=12 format=2]
+
+[ext_resource path="res://addons/explosion/smokeshader.tres" type="Shader" id=1]
+[ext_resource path="res://addons/explosion/normal+.png" type="Texture" id=2]
+[ext_resource path="res://addons/explosion/smokesprite.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 256
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.139394, 0.448485, 0.724242 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.74, 0.74, 0.74, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0.46129, 0.552795, 0.602484 )
+colors = PoolColorArray( 1, 0.722397, 0.117188, 1, 1, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+width = 256
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0, 0.0434783, 0.319876 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.438202, 0.438202, 0.438202, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+width = 64
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/particle_h_frames = 8.0
+shader_param/particle_v_frames = 8.0
+shader_param/particles_anim_loop = null
+shader_param/still_frame = -1.0
+shader_param/Soft_limit = 0.1
+shader_param/blend_scale = 0.1
+shader_param/emission_falloff_multiplier = 0.3
+shader_param/tex_frg_2 = ExtResource( 3 )
+shader_param/Smoke_color_ramp = SubResource( 2 )
+shader_param/blend_help = SubResource( 4 )
+shader_param/emission_falloff = SubResource( 8 )
+shader_param/emission_color_ramp = SubResource( 6 )
+shader_param/tex_frg_16 = ExtResource( 2 )

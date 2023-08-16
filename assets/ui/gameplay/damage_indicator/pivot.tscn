@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ui/gameplay/damage_indicator/pivot.gd" type="Script" id=1]
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/joystick_base_outline.png-e142fe5c031fefb3f05a435252417eea.stex"
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = SubResource( 5 )
+region = Rect2( 201.115, 0.3, 1.8853, 200 )
+filter_clip = true
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("damage_indicator:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 201.115, 0.3, 1.8853, 200 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "damage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("damage_indicator:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Rect2( 201.115, 0.3, 1.8853, 200 ), Rect2( 160, 0.3, 41.1147, 200 ), Rect2( 160, 0.3, 41.1147, 200 ) ]
+}
+
+[node name="pivot" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 100, 100 )
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 5
+script = ExtResource( 1 )
+
+[node name="damage_indicator" type="TextureRect" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -75.0
+margin_right = 50.0
+margin_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 50, 150 )
+rect_pivot_offset = Vector2( 0, 75 )
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 5
+texture = SubResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/damage = SubResource( 7 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

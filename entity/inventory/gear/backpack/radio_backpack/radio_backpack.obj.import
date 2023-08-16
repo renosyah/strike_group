@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/radio_backpack.obj-46d4bb1f8e9028c4336f0aca3e03606a.mesh"
+
+[deps]
+
+files=[ "res://.import/radio_backpack.obj-46d4bb1f8e9028c4336f0aca3e03606a.mesh" ]
+
+source_file="res://entity/inventory/gear/backpack/radio_backpack/radio_backpack.obj"
+dest_files=[ "res://.import/radio_backpack.obj-46d4bb1f8e9028c4336f0aca3e03606a.mesh", "res://.import/radio_backpack.obj-46d4bb1f8e9028c4336f0aca3e03606a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

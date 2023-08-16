@@ -1,0 +1,2040 @@
+[gd_scene load_steps=76 format=2]
+
+[ext_resource path="res://entity/unit/ground_unit/infantry/riflemen/riflemen.gd" type="Script" id=1]
+[ext_resource path="res://entity/unit/ground_unit/infantry/riflemen/riflemen.glb" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape" id=13]
+radius = 0.336882
+height = 0.815057
+
+[sub_resource type="SpatialMaterial" id=33]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0.772549, 0.501961, 0.152941, 1 )
+
+[sub_resource type="SpatialMaterial" id=34]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=86]
+
+[sub_resource type="SpatialMaterial" id=85]
+albedo_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.916402, 0.337009, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.916402, 0.328754, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -90 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.00259921, 0.357036, -0.0504589 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 89.362, 151.969, -33.169 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "equip_at"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 53.309, 68.6758, -51.478 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.189999, 0.523109, -0.540357 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.225209, 0.159103, -0.0702536 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 24.3108, 178.181, -0.648161 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0159039, 0.35608, -0.153044 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 25.2108, -177.909, 0.0493368 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "equip_grenade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.326895, -1.10049e-07, -177.119 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.305418, -0.124988, 0.0545174 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.324358, -0.202165, -0.156747 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 87.939, 1.05493e-07, 179.653 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.0879329, 0.339351, 0.00779688 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 87.1531, 11.2868, -168.222 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "equip_handgun"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 80.284, 142.182, 2.88098 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.184537, 0.115613, -0.351433 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.318656, 0.224832, -0.292805 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 41.8426, 132.186, -87.9729 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.00259918, 0.357036, -0.0504588 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 46.4363, 136.452, -90.017 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "equip_item"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 88.6681, 180, 2.88098 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.305418, -0.124988, -0.317241 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.324358, -0.0832981, -0.295806 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 87.939, 4.63663e-08, 179.653 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.269421, 0.358683, -0.0504588 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 87.1531, 11.2868, -168.222 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "equip_smg"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 75.6517, -88.1788, 130.892 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0500246, 0.115613, -0.43227 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.206129, 0.0922956, 0.00991523 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 85.9861, 73.5161, -120.073 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0128989, 0.401758, -0.052011 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 76.4169, 75.3126, -108.313 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "fire_at"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 53.309, 68.6758, -51.478 ), Vector3( 53.309, 68.6757, -51.478 ), Vector3( 53.309, 68.6758, -51.478 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.189999, 0.523109, -0.540357 ), Vector3( 0.189999, 0.523109, -0.291402 ), Vector3( 0.189999, 0.523109, -0.540357 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.225209, 0.159103, -0.0702536 ), Vector3( 0.225209, 0.226125, -0.0702536 ), Vector3( 0.225209, 0.159103, -0.0702536 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 24.3108, 178.181, -0.648161 ), Vector3( 5.59729, 178.334, -0.061504 ), Vector3( 24.3108, 178.181, -0.648161 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0159039, 0.35608, -0.153044 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 25.2108, -177.909, 0.0493368 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fire_handgun"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 80.284, 142.182, 2.88098 ), Vector3( 66.8015, 164.77, 26.2496 ), Vector3( 80.284, 142.182, 2.88098 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.184537, 0.115613, -0.351433 ), Vector3( -0.184537, 0.124886, -0.27244 ), Vector3( -0.184537, 0.115613, -0.351433 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.318656, 0.224832, -0.292805 ), Vector3( 0.318656, 0.215559, -0.187915 ), Vector3( 0.318656, 0.224832, -0.292805 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 41.8426, 132.186, -87.9729 ), Vector3( 31.1702, 139.823, -75.2244 ), Vector3( 41.8426, 132.186, -87.9729 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.00259918, 0.357036, -0.0504588 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 46.4363, 136.452, -90.017 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "fire_smg"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 75.6517, -84.3398, 130.892 ), Vector3( 72.6502, -123.839, 93.928 ), Vector3( 75.6517, -84.3398, 130.892 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.0132166, 0.115613, -0.355391 ), Vector3( -0.0500246, 0.115613, -0.21497 ), Vector3( -0.0132166, 0.115613, -0.355391 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.206129, 0.0922956, 0.00991523 ), Vector3( 0.206129, 0.0922956, 0.0916858 ), Vector3( 0.206129, 0.0922956, 0.00991523 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.116666, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 85.9507, 71.904, -121.689 ), Vector3( 85.4071, 123.046, -70.4202 ), Vector3( 85.9507, 71.904, -121.689 ), Vector3( 85.9507, 71.904, -121.689 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0128989, 0.401758, -0.052011 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 76.4169, 75.3126, -108.313 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -177.119 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.305418, -0.172145, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.324358, -0.1819, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 179.653 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.00259921, 0.357036, -0.0504589 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 89.362, 151.969, -33.169 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "reload_at"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 53.309, 68.6758, -51.478 ), Vector3( 53.309, 68.6757, -51.478 ), Vector3( 16.6103, 35.509, -103.992 ), Vector3( 88.9525, 122.978, -37.2852 ), Vector3( 3.15487, 0.880085, -160.219 ), Vector3( 88.9525, 122.978, -37.2852 ), Vector3( 16.6103, 35.509, -103.992 ), Vector3( 53.309, 68.6757, -51.478 ), Vector3( 53.309, 68.6758, -51.478 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.189999, 0.523109, -0.540357 ), Vector3( 0.189999, -0.331429, -0.540357 ), Vector3( 0.189999, -0.407273, -0.540357 ), Vector3( -0.850769, 0.413515, -0.540357 ), Vector3( -0.452402, -0.151148, 0.113492 ), Vector3( -0.850769, 0.413515, -0.540357 ), Vector3( 0.189999, -0.407273, -0.540357 ), Vector3( 0.189999, -0.331429, -0.540357 ), Vector3( 0.189999, 0.523109, -0.540357 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 2.4, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.225209, 0.159103, -0.0702536 ), Vector3( 0.225209, 0.0863292, 0.0562264 ), Vector3( 0.225209, 0.0863292, 0.0562264 ), Vector3( 0.225209, 0.159103, -0.0702536 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 2.4, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 24.3108, 178.181, -0.648161 ), Vector3( 57.1475, 176.943, -2.46796 ), Vector3( 86.6666, 150.161, -29.696 ), Vector3( 57.1475, 176.943, -2.46796 ), Vector3( 24.3108, 178.181, -0.648161 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0159039, 0.35608, -0.153044 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 25.2108, -177.909, 0.0493368 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "reload_handgun"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9, 1.1, 1.4, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 80.284, 142.182, 2.88098 ), Vector3( 66.8016, 164.77, 26.2496 ), Vector3( 66.8016, 164.77, 26.2496 ), Vector3( 77.0387, 27.4746, -112.827 ), Vector3( 37.2365, -35.9511, -164.792 ), Vector3( 66.8016, 164.77, 26.2496 ), Vector3( 80.284, 142.182, 2.88098 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9, 1.1, 1.4, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.184537, 0.115613, -0.351433 ), Vector3( -0.184537, 0.124886, -0.0919985 ), Vector3( -0.219091, 0.291232, -0.0919985 ), Vector3( -0.309934, 0.216254, -0.0919985 ), Vector3( -0.381635, 0.202555, -0.0919985 ), Vector3( -0.184537, 0.124886, -0.0919985 ), Vector3( -0.184537, 0.115613, -0.351433 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 1.4, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.318656, 0.224832, -0.292805 ), Vector3( 0.318656, 0.215559, -0.00747395 ), Vector3( 0.318656, 0.215559, -0.188896 ), Vector3( 0.318656, 0.215559, -0.00747395 ), Vector3( 0.318656, 0.224832, -0.292805 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 1.4, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 41.8426, 132.186, -87.9729 ), Vector3( 31.1702, 139.823, -75.2244 ), Vector3( 3.46605, 146.426, -53.9157 ), Vector3( 31.1702, 139.823, -75.2244 ), Vector3( 41.8426, 132.186, -87.9729 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.00259918, 0.357036, -0.0504588 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 46.4363, 136.452, -90.017 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "reload_smg"
+length = 2.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8, 1.3, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 75.6517, -88.1788, 130.892 ), Vector3( 39.5321, -112.061, 143.58 ), Vector3( 39.5321, -64.2057, 143.58 ), Vector3( 39.5321, -112.061, 143.58 ), Vector3( 75.6517, -88.1788, 130.892 ), Vector3( 75.6517, -133.494, 130.892 ), Vector3( 75.6517, -88.1788, 130.892 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8, 1.3, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.0500246, 0.115613, -0.43227 ), Vector3( -0.17236, 0.115613, -0.495554 ), Vector3( -0.257352, -0.686219, 2.28422 ), Vector3( -0.17236, 0.115613, -0.495554 ), Vector3( -0.0500246, 0.115613, -0.43227 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 1, 1.3, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.206129, 0.0922956, 0.00991523 ), Vector3( 0.619686, 0.0922956, 0.00991523 ), Vector3( 0.619686, 0.0922956, 0.00991523 ), Vector3( 0.619686, 0.0922956, 0.00991523 ), Vector3( 0.619686, 0.0922956, 0.00991523 ), Vector3( 0.206129, 0.0922956, 0.00991523 ), Vector3( 0.206129, 0.0922956, 0.0797464 ), Vector3( 0.206129, 0.0922956, 0.00991523 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 1, 1.3, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 85.9861, 73.5161, -120.073 ), Vector3( 85.1809, 109.157, -124.122 ), Vector3( 66.3009, 93.933, -139.614 ), Vector3( 66.3009, 93.933, -139.614 ), Vector3( 85.1809, 109.157, -124.122 ), Vector3( 85.9861, 73.5161, -120.073 ), Vector3( 85.9861, 73.5161, -120.073 ), Vector3( 85.9861, 73.5161, -120.073 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0128989, 0.401758, -0.052011 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 76.4169, 75.3126, -108.313 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "throw_grenade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/hand_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.326895, -1.10049e-07, -177.119 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/hand_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.305418, -0.124988, 0.0545174 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/hand_r:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.324358, 0.57862, -0.228915 ), Vector3( 0.324358, 0.463102, -1.04937 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/hand_r:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -29.351, -180, -0.346996 ), Vector3( 79.081, -180, -0.347 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.0886087, 0.34651, 0.00696385 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armature/Skeleton/hand_r_attach/equip_r:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 87.1531, 11.2868, -168.222 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.00565413, 0.310879, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature/Skeleton/hand_l_attach/equip_l:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.56821, -0.230384, -0.00918912 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=64]
+animation = "equip_at"
+
+[sub_resource type="AnimationNodeAnimation" id=78]
+animation = "equip_grenade"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "equip_handgun"
+
+[sub_resource type="AnimationNodeAnimation" id=54]
+animation = "equip_item"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "equip_smg"
+
+[sub_resource type="AnimationNodeAnimation" id=65]
+animation = "fire_at"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "fire_handgun"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "fire_smg"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=66]
+animation = "reload_at"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "reload_handgun"
+
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "reload_smg"
+
+[sub_resource type="AnimationNodeAnimation" id=79]
+animation = "throw_grenade"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=67]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=68]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=70]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=80]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=81]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=82]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=83]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=28]
+states/equip_at/node = SubResource( 64 )
+states/equip_at/position = Vector2( 812, 161.52 )
+states/equip_grenade/node = SubResource( 78 )
+states/equip_grenade/position = Vector2( 374.852, 161.621 )
+states/equip_handgun/node = SubResource( 18 )
+states/equip_handgun/position = Vector2( 375, 75 )
+states/equip_item/node = SubResource( 54 )
+states/equip_item/position = Vector2( 605.105, 237.86 )
+states/equip_smg/node = SubResource( 41 )
+states/equip_smg/position = Vector2( 812, 75 )
+states/fire_at/node = SubResource( 65 )
+states/fire_at/position = Vector2( 984, 161.52 )
+states/fire_handgun/node = SubResource( 19 )
+states/fire_handgun/position = Vector2( 155, 75 )
+states/fire_smg/node = SubResource( 42 )
+states/fire_smg/position = Vector2( 1000, 75 )
+states/idle/node = SubResource( 20 )
+states/idle/position = Vector2( 605, 75 )
+states/reload_at/node = SubResource( 66 )
+states/reload_at/position = Vector2( 812, 239.52 )
+states/reload_handgun/node = SubResource( 21 )
+states/reload_handgun/position = Vector2( 375, -1 )
+states/reload_smg/node = SubResource( 47 )
+states/reload_smg/position = Vector2( 812, -1 )
+states/throw_grenade/node = SubResource( 79 )
+states/throw_grenade/position = Vector2( 154.165, 161.503 )
+transitions = [ "idle", "equip_handgun", SubResource( 22 ), "equip_handgun", "idle", SubResource( 23 ), "equip_handgun", "fire_handgun", SubResource( 24 ), "fire_handgun", "equip_handgun", SubResource( 25 ), "equip_handgun", "reload_handgun", SubResource( 26 ), "reload_handgun", "equip_handgun", SubResource( 27 ), "reload_handgun", "idle", SubResource( 35 ), "idle", "equip_smg", SubResource( 43 ), "equip_smg", "idle", SubResource( 44 ), "equip_smg", "fire_smg", SubResource( 45 ), "fire_smg", "equip_smg", SubResource( 46 ), "equip_smg", "reload_smg", SubResource( 48 ), "reload_smg", "equip_smg", SubResource( 49 ), "reload_smg", "idle", SubResource( 50 ), "idle", "equip_item", SubResource( 55 ), "equip_item", "idle", SubResource( 56 ), "idle", "equip_at", SubResource( 67 ), "equip_at", "idle", SubResource( 68 ), "equip_at", "reload_at", SubResource( 69 ), "reload_at", "equip_at", SubResource( 70 ), "equip_at", "fire_at", SubResource( 71 ), "fire_at", "equip_at", SubResource( 72 ), "reload_at", "idle", SubResource( 73 ), "idle", "equip_grenade", SubResource( 80 ), "equip_grenade", "idle", SubResource( 81 ), "equip_grenade", "throw_grenade", SubResource( 82 ), "throw_grenade", "equip_grenade", SubResource( 83 ) ]
+start_node = "idle"
+graph_offset = Vector2( 0, -39.48 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=29]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/leg_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -4.18419e-06, 5.71593e-06, 171.205 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/leg_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.184957, -0.767169, -0.0148895 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/leg_r:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -5.67579e-06, 4.23847e-06, -171.751 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/leg_r:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.190861, -0.769697, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/leg_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -4.18419e-06, 5.71593e-06, 171.205 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/leg_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.184957, -0.767169, -0.0148895 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/leg_r:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -5.67579e-06, 4.23847e-06, -171.751 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/leg_r:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.190861, -0.769697, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 49.547, 0, 0 ), Vector3( 90, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -0.675019, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/leg_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -4.18419e-06, 5.71593e-06, 171.205 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/leg_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.184957, -0.767169, -0.0148895 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/leg_r:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -5.67579e-06, 4.23847e-06, -171.751 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/leg_r:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.190861, -0.769697, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "walk"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/leg_l:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -24.514, 5.99526e-06, 171.205 ), Vector3( -24.514, 6.22709e-06, 171.205 ), Vector3( 25.976, 6.21735e-06, 171.205 ), Vector3( 10.254, 5.54732e-06, 171.205 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/leg_l:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.184957, -0.767169, 0.335409 ), Vector3( -0.184957, -0.767169, -0.153379 ), Vector3( -0.184957, -0.767169, -0.340748 ), Vector3( -0.184957, -0.767169, -0.153379 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/leg_r:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 20.833, 4.79709e-06, -171.751 ), Vector3( -0.785006, 4.1591e-06, -171.751 ), Vector3( -12.4508, 4.57212e-06, -171.751 ), Vector3( -42.0828, 5.75366e-06, -171.751 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/leg_r:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.190861, -0.769697, -0.26476 ), Vector3( 0.190861, -0.769697, 0.0162928 ), Vector3( 0.190861, -0.769697, -0.0310585 ), Vector3( 0.190861, -0.769697, 0.286654 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "dead"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/dead/node = SubResource( 31 )
+states/dead/position = Vector2( 721, 61 )
+states/idle/node = SubResource( 7 )
+states/idle/position = Vector2( 561, 61 )
+states/walk/node = SubResource( 8 )
+states/walk/position = Vector2( 561, 172 )
+transitions = [ "idle", "walk", SubResource( 9 ), "walk", "idle", SubResource( 10 ), "idle", "dead", SubResource( 32 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+
+[node name="riflemen" type="KinematicBody"]
+collision_layer = 0
+input_ray_pickable = false
+script = ExtResource( 1 )
+speed = 3
+hp = 250
+max_hp = 250
+margin = 0.3
+attack_damage = 10
+attack_delay = 5.0
+attack_range = 4.0
+equip_right_hand_position = NodePath("body/Armature/Skeleton/hand_r_attach/equip_r")
+equip_left_hand_position = NodePath("body/Armature/Skeleton/hand_l_attach/equip_l")
+equip_body_position = NodePath("body/Armature/Skeleton/body_attach/attach_body")
+equip_head_position = NodePath("body/Armature/Skeleton/head_attach/attach")
+equip_back_position = NodePath("body/Armature/Skeleton/body_attach/attach_back")
+equip_face_position = NodePath("body/Armature/Skeleton/head_attach/face")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0333819, -0.999443, 0, 0.999443, 0.0333819, -0.00012707, -0.117754, -0.0177682 )
+shape = SubResource( 13 )
+
+[node name="body" parent="." instance=ExtResource( 2 )]
+
+[node name="Skeleton" parent="body/Armature" index="0"]
+bones/5/bound_children = [ NodePath("body_attach") ]
+bones/6/bound_children = [ NodePath("head_attach") ]
+bones/8/bound_children = [ NodePath("hand_l_attach") ]
+bones/10/bound_children = [ NodePath("hand_r_attach") ]
+
+[node name="Cube_Cube001" parent="body/Armature/Skeleton" index="0"]
+software_skinning_transform_normals = false
+material/0 = SubResource( 33 )
+material/1 = SubResource( 34 )
+material/2 = SubResource( 86 )
+material/3 = SubResource( 85 )
+
+[node name="hand_l" type="SkeletonIK" parent="body/Armature/Skeleton" index="1"]
+process_priority = 1
+root_bone = "upper_arm.l"
+tip_bone = "lower_arm.l"
+target_node = NodePath("../../../body/hand_l")
+
+[node name="hand_l_attach" type="BoneAttachment" parent="body/Armature/Skeleton" index="2"]
+transform = Transform( -2.27243e-07, -1, -5.94315e-08, 1, -2.27243e-07, -5.19784e-08, 5.19784e-08, -5.94316e-08, 1, -0.473647, 0.331303, 0.0256426 )
+bone_name = "lower_arm.l"
+
+[node name="equip_l" type="Spatial" parent="body/Armature/Skeleton/hand_l_attach"]
+transform = Transform( 0.999992, -0.000159873, -0.00400817, -0.000159871, 0.996823, -0.0796458, 0.00400818, 0.0796458, 0.996815, 0.00565413, 0.310879, 0 )
+
+[node name="hand_r" type="SkeletonIK" parent="body/Armature/Skeleton" index="3"]
+process_priority = 1
+root_bone = "upper_arm.r"
+tip_bone = "lower_arm.r"
+target_node = NodePath("../../../body/hand_r")
+
+[node name="hand_r_attach" type="BoneAttachment" parent="body/Armature/Skeleton" index="4"]
+transform = Transform( -2.27243e-07, 1, 2.97158e-08, -1, -2.27243e-07, -5.19784e-08, -5.19784e-08, -2.97158e-08, 1, 0.473647, 0.331303, 0.0256426 )
+bone_name = "lower_arm.r"
+
+[node name="equip_r" type="Spatial" parent="body/Armature/Skeleton/hand_r_attach"]
+transform = Transform( -0.996093, -0.0895764, 0.00523366, -0.00609282, 0.00932034, -1.00009, 0.0895362, -0.995906, -0.00983024, -0.00259921, 0.357036, -0.0504589 )
+
+[node name="head_attach" type="BoneAttachment" parent="body/Armature/Skeleton" index="5"]
+transform = Transform( 1, -9.04806e-16, 2.38899e-07, 3.11934e-14, 1, -1.26784e-07, -2.38899e-07, 1.26784e-07, 1, -3.40896e-16, 0.420506, 4.77674e-08 )
+bone_name = "head"
+
+[node name="attach" type="Spatial" parent="body/Armature/Skeleton/head_attach"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.286493, 0 )
+
+[node name="face" type="Spatial" parent="body/Armature/Skeleton/head_attach"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3493e-09, 0.19236, -0.005648 )
+
+[node name="body" type="SkeletonIK" parent="body/Armature/Skeleton" index="6"]
+process_priority = 1
+root_bone = "root"
+tip_bone = "body"
+target_node = NodePath("../../../body")
+
+[node name="body_attach" type="BoneAttachment" parent="body/Armature/Skeleton" index="7"]
+transform = Transform( 1, -9.04806e-16, 2.38899e-07, 3.11934e-14, 1, -1.26784e-07, -2.38899e-07, 1.26784e-07, 1, 0, 0.0437446, 0 )
+bone_name = "body"
+
+[node name="attach_body" type="Spatial" parent="body/Armature/Skeleton/body_attach"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0681078, 0 )
+
+[node name="attach_back" type="Spatial" parent="body/Armature/Skeleton/body_attach"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10248e-08, 0.106589, 0.214014 )
+
+[node name="leg_l" type="SkeletonIK" parent="body/Armature/Skeleton" index="8"]
+process_priority = 1
+root_bone = "upper_leg.l"
+tip_bone = "lower_leg.l"
+target_node = NodePath("../../../leg_l")
+
+[node name="leg_r" type="SkeletonIK" parent="body/Armature/Skeleton" index="9"]
+process_priority = 1
+root_bone = "upper_leg.r"
+tip_bone = "lower_leg.r"
+target_node = NodePath("../../../leg_r")
+
+[node name="body" type="Position3D" parent="body"]
+
+[node name="hand_l" type="Position3D" parent="body/body"]
+transform = Transform( -4.37113e-08, -1, 0, 0.999999, -4.37114e-08, 0, 0, 0, 1, -0.916402, 0.337009, 0 )
+
+[node name="hand_r" type="Position3D" parent="body/body"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.916402, 0.328754, 0 )
+
+[node name="leg_l" type="Position3D" parent="body"]
+transform = Transform( -0.988242, -0.1529, 9.97618e-08, 0.1529, -0.988242, 7.30279e-08, 8.74229e-08, 8.74228e-08, 1, -0.184957, -0.767169, -0.0148895 )
+
+[node name="leg_r" type="Position3D" parent="body"]
+transform = Transform( -0.989654, 0.143475, 7.39753e-08, -0.143475, -0.989654, 9.90612e-08, 8.74227e-08, 8.74227e-08, 1, 0.190861, -0.769697, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="body"]
+autoplay = "idle"
+anims/RESET = SubResource( 2 )
+anims/equip_at = SubResource( 59 )
+anims/equip_grenade = SubResource( 76 )
+anims/equip_handgun = SubResource( 15 )
+anims/equip_item = SubResource( 53 )
+anims/equip_smg = SubResource( 38 )
+anims/fire_at = SubResource( 60 )
+anims/fire_handgun = SubResource( 16 )
+anims/fire_smg = SubResource( 39 )
+anims/idle = SubResource( 3 )
+anims/reload_at = SubResource( 63 )
+anims/reload_handgun = SubResource( 17 )
+anims/reload_smg = SubResource( 40 )
+anims/throw_grenade = SubResource( 77 )
+
+[node name="AnimationTree" type="AnimationTree" parent="body"]
+tree_root = SubResource( 28 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 29 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/dead = SubResource( 30 )
+anims/idle = SubResource( 5 )
+anims/walk = SubResource( 6 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 12 )
+
+[editable path="body"]

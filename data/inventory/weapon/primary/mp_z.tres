@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/inventory/weapon/weapon_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+type = 0
+player_id = ""
+item_name = "MP-Z"
+entity_name = ""
+entity_icon = "res://assets/ui/icons/weapon/mpz.png"
+description = "common issue PDW"
+node_name = ""
+network_id = 0
+scene_path = "res://entity/inventory/weapon/smg/mp_z/mp_z.tscn"
+position = Vector3( 0, 0, 0 )
+is_unlimited = false
+mods = [  ]

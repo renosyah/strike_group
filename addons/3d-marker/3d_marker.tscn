@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/3d-marker/3d_marker.gd" type="Script" id=1]
+[ext_resource path="res://addons/3d-marker/marker_item/marker_item.tscn" type="PackedScene" id=2]
+
+[node name="3d_marker" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="marker_item" parent="." instance=ExtResource( 2 )]

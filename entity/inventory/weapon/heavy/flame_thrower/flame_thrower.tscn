@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://entity/inventory/weapon/heavy/flame_thrower/flame_thrower.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entity/inventory/weapon/heavy/flame_thrower/flame_thrower.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 0.729412, 0.639216, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="SphereMesh" id=11]
+material = SubResource( 3 )
+radius = 0.2
+height = 0.4
+radial_segments = 12
+rings = 16
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0.220455 ), 0.0, 0.0, 0, 0, Vector2( 0.663265, 0.993182 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.429545 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="SphereMesh" id=13]
+material = SubResource( 3 )
+radius = 0.5
+height = 0.9
+radial_segments = 12
+rings = 16
+
+[sub_resource type="SphereShape" id=8]
+radius = 1.50314
+
+[sub_resource type="SphereShape" id=12]
+radius = 1.03669
+
+[node name="flame_thrower" type="Spatial"]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+equip_animation = "equip_smg"
+fire_animation = "fire_smg"
+reload_animation = "reload_smg"
+attack_damage = 122
+attack_delay = 0.25
+reload_delay = 2.4
+attack_range = 8.0
+spread = 0.34
+ammo = 25
+max_ammo = 25
+ammo_pool = 50
+max_ammo_pool = 50
+barrel_position = NodePath("fire")
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 9 )
+material/1 = SubResource( 10 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "Sfx"
+
+[node name="fire" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05498, -0.570429 )
+amount = 4
+randomness = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 11 )
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 1, 0 )
+initial_velocity = 0.1
+scale_amount_curve = SubResource( 5 )
+color = Color( 1, 0.360784, 0, 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="flame" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0230352, -0.572374 )
+emitting = false
+amount = 12
+randomness = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 13 )
+direction = Vector3( 0, 0, -1 )
+spread = 23.0
+gravity = Vector3( 0, 0, -16 )
+initial_velocity = 1.0
+scale_amount_curve = SubResource( 5 )
+color = Color( 1, 0.360784, 0, 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="damage_area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.1621 )
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="damage_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.951928 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="damage_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.05563 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="damage_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.51262 )
+shape = SubResource( 12 )
+
+[node name="turn_off_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="turn_off_timer" to="." method="_on_turn_off_timer_timeout"]

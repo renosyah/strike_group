@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/heavy_body_armor.obj-3a855db7a0b42ab41a25b5468800e784.mesh"
+
+[deps]
+
+files=[ "res://.import/heavy_body_armor.obj-3a855db7a0b42ab41a25b5468800e784.mesh" ]
+
+source_file="res://entity/inventory/gear/body_armor/heavy_body_armor/heavy_body_armor.obj"
+dest_files=[ "res://.import/heavy_body_armor.obj-3a855db7a0b42ab41a25b5468800e784.mesh", "res://.import/heavy_body_armor.obj-3a855db7a0b42ab41a25b5468800e784.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

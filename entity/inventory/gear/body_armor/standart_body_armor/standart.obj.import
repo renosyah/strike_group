@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/standart.obj-ff7824e7ae6e1b9e22b8d3e239e1d2eb.mesh"
+
+[deps]
+
+files=[ "res://.import/standart.obj-ff7824e7ae6e1b9e22b8d3e239e1d2eb.mesh" ]
+
+source_file="res://entity/inventory/gear/body_armor/standart_body_armor/standart.obj"
+dest_files=[ "res://.import/standart.obj-ff7824e7ae6e1b9e22b8d3e239e1d2eb.mesh", "res://.import/standart.obj-ff7824e7ae6e1b9e22b8d3e239e1d2eb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

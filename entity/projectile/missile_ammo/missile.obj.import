@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/missile.obj-36f507b974a48ed3598de6947e925220.mesh"
+
+[deps]
+
+files=[ "res://.import/missile.obj-36f507b974a48ed3598de6947e925220.mesh" ]
+
+source_file="res://entity/projectile/missile_ammo/missile.obj"
+dest_files=[ "res://.import/missile.obj-36f507b974a48ed3598de6947e925220.mesh", "res://.import/missile.obj-36f507b974a48ed3598de6947e925220.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

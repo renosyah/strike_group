@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/red_dot.obj-23c4a819e2050335f9f48989fe8c08ae.mesh"
+
+[deps]
+
+files=[ "res://.import/red_dot.obj-23c4a819e2050335f9f48989fe8c08ae.mesh" ]
+
+source_file="res://entity/inventory/weapon_mod/scope/red_dot/red_dot.obj"
+dest_files=[ "res://.import/red_dot.obj-23c4a819e2050335f9f48989fe8c08ae.mesh", "res://.import/red_dot.obj-23c4a819e2050335f9f48989fe8c08ae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/dmr.obj-4b6f0bbfd605776b370db135e508e576.mesh"
+
+[deps]
+
+files=[ "res://.import/dmr.obj-4b6f0bbfd605776b370db135e508e576.mesh" ]
+
+source_file="res://entity/inventory/weapon/rifle/dmr/dmr.obj"
+dest_files=[ "res://.import/dmr.obj-4b6f0bbfd605776b370db135e508e576.mesh", "res://.import/dmr.obj-4b6f0bbfd605776b370db135e508e576.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

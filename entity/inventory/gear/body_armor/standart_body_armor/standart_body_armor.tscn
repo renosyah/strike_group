@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://entity/inventory/gear/Gear.gd" type="Script" id=1]
+[ext_resource path="res://entity/inventory/gear/body_armor/standart_body_armor/standart.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.541176, 0.282353, 0, 1 )
+
+[node name="standart_body_armor" type="Spatial"]
+script = ExtResource( 1 )
+type_gear = 2
+armor = 25
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+cast_shadow = 0
+mesh = ExtResource( 2 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 1 )

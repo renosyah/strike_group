@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flamer_fuel.obj-64df68a43b0c7f17a1a82d68b78ba4cf.mesh"
+
+[deps]
+
+files=[ "res://.import/flamer_fuel.obj-64df68a43b0c7f17a1a82d68b78ba4cf.mesh" ]
+
+source_file="res://entity/inventory/gear/backpack/flamer_fuel/flamer_fuel.obj"
+dest_files=[ "res://.import/flamer_fuel.obj-64df68a43b0c7f17a1a82d68b78ba4cf.mesh", "res://.import/flamer_fuel.obj-64df68a43b0c7f17a1a82d68b78ba4cf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

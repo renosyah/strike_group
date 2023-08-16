@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/googles.obj-0d478cefe9ddf71f3b91e08b60618a5a.mesh"
+
+[deps]
+
+files=[ "res://.import/googles.obj-0d478cefe9ddf71f3b91e08b60618a5a.mesh" ]
+
+source_file="res://entity/inventory/gear/face_wear/googles/googles.obj"
+dest_files=[ "res://.import/googles.obj-0d478cefe9ddf71f3b91e08b60618a5a.mesh", "res://.import/googles.obj-0d478cefe9ddf71f3b91e08b60618a5a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
